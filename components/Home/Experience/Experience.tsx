@@ -67,7 +67,7 @@ const Experience = () => {
       <div className="w-[80%] mx-auto bg-gray-800 p-6 rounded-lg shadow-lg">
         {/* Icon */}
         <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-600 text-white mb-4">
-          {experienceInfo.education[0].icon} {/* Assuming there's an icon for education */}
+          {experienceInfo.education[0].iconPath} {/* Assuming there's an icon for education */}
         </div>
 
         {/* Content */}
