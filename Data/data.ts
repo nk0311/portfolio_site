@@ -1,10 +1,10 @@
 export const BaseInfo = {
   name: "Navait Kumar",
   position: "Software Engineer",
-  description: "Hello! I am a passionate software engineer with a strong background in computer science, fueled by a love for innovation and problem-solving. My journey is marked by a blend of technical expertise and creative curiosity, with a focus on building scalable applications that enhance user experiences. I enjoy exploring the intersection of software development and AI, having worked on projects that integrate machine learning models with web applications. Feel free to explore my portfolio and connect with me on LinkedIn!",
+  description:
+    "Hello! I am a passionate software engineer with a strong background in computer science, fueled by a love for innovation and problem-solving. My journey is marked by a blend of technical expertise and creative curiosity, with a focus on building scalable applications that enhance user experiences. I enjoy exploring the intersection of software development and AI, having worked on projects that integrate machine learning models with web applications. Feel free to explore my portfolio and connect with me on LinkedIn!",
   profilePic: "/images/hero.png",
 };
-
 
 export const experienceInfo = {
   workExperience: [
@@ -14,7 +14,6 @@ export const experienceInfo = {
       location: "Remote",
       date: "Dec 2023 - Present",
       description: [
-        
         "Architected model evaluation pipelines using LangChain and FastAPI, implementing robust testing frameworks with PyTest and Pydantic for type validation, reducing deployment cycles by 30% across production LLM projects",
         " Developed 100+ REST API endpoints with FastAPI leveraging Elasticsearch and Redis for indexing and caching, serving 50K+ daily requests",
         "Built and optimized CI/CD pipelines on Linux environments using Bash scripting and Docker, resulting in 45% reduction in deployment time and improved system reliability",
@@ -37,11 +36,9 @@ export const experienceInfo = {
       location: "New York, NY",
       date: "Jul 2023 - Present",
       description: [
-        
         "Developed 10+ AI web applications using Next.js, OpenAI, Pinecone, and Stripe, driving a 20% increase in user engagement and automating core workflows by implementing API integrations and data pipelines",
         "Implemented Firebase and Clerk authentication, significantly decreasing codebase size, improving system scalability and developer experience",
         "Built and led a team to deliver production-ready code under tight deadlines, deploying high-performance AI applications that boosted customer retention rates by 15% within the first two weeks of launch.",
-        
       ],
       skills: [
         "Next.js",
@@ -64,7 +61,14 @@ export const experienceInfo = {
         "Designed and implemented cloud infrastructure using AWS services (EC2, RDS, S3, Lambda, Cognito), resulting in 99.9% system uptime and secure authentication CMS admins",
         "Independently owned and shipped multiple features in a startup environment, including a bulk content scheduling system using TanStack Query that increased creator productivity by 3x and reduced publishing errors by 75%",
       ],
-      skills: ["Python", "Django", "React", "TypeScript", "AWS", "TanStack Query"],
+      skills: [
+        "Python",
+        "Django",
+        "React",
+        "TypeScript",
+        "AWS",
+        "TanStack Query",
+      ],
       iconPath: "/images/mixspot.png", // Path to the NASA logo
     },
   ],
@@ -81,7 +85,6 @@ export const experienceInfo = {
     },
   ],
 };
-
 
 export const servicesData = [
   {
@@ -188,8 +191,16 @@ export const projectData = [
     image: "/images/customer-churn.png",
     github: "https://github.com/nk0311/customer_churn_ml",
     demo: "https://ml-customer-churn-prediction.streamlit.app/",
-    description: "A machine learning-driven predictive tool designed to empower businesses in identifying customers at risk of churn ",
-    technologies: ["Python", "Numpy", "Sklearn", "Pandas", "Xception-Model", "Streamlit"],
+    description:
+      "A machine learning-driven predictive tool designed to empower businesses in identifying customers at risk of churn ",
+    technologies: [
+      "Python",
+      "Numpy",
+      "Sklearn",
+      "Pandas",
+      "Xception-Model",
+      "Streamlit",
+    ],
   },
 
   {
@@ -198,41 +209,83 @@ export const projectData = [
     image: "/images/brain-tumor-classification.png",
     github: "https://github.com/nk0311/brain_tumor_classification",
     demo: "https://braintumorclassification1.streamlit.app/",
-    description: "A tool using neural networks for accurate MRI scan classification of various tumors",
-    technologies: ["Python", "Computer Vision", "Gemini 2.0", "Neural Networks", "Transfer Learning", "Streamlit"],
+    description:
+      "A tool using neural networks for accurate MRI scan classification of various tumors",
+    technologies: [
+      "Python",
+      "Computer Vision",
+      "Gemini 2.0",
+      "Neural Networks",
+      "Transfer Learning",
+      "Streamlit",
+    ],
   },
-  
+
   {
     id: 3,
     title: "Codebase RAG",
     image: "/images/codebase-rag.png",
     github: "https://github.com/nk0311/brain_tumor_classification",
     demo: "https://github.com/nk0311/codebase_rag",
-    description: "An AI Expert over a codebase using Retrieval-Augumented Generation (RAG)",  
-    technologies: ["Python", "Grok", "Model Inference", "Github API", "Agents", "RAG"],
+    description:
+      "An AI Expert over a codebase using Retrieval-Augumented Generation (RAG)",
+    technologies: [
+      "Python",
+      "Grok",
+      "Model Inference",
+      "Github API",
+      "Agents",
+      "RAG",
+    ],
   },
 
   {
     id: 4,
-    title: "Codebase RAG",
-    image: "/images/brain-tumor-classification.png",
-    github: "https://github.com/nk0311/brain_tumor_classification",
+    title: "Sutainable AI",
+    image: "/images/sustainable.png",
+    github: "https://github.com/MoHoThrives/sustAInable",
     demo: "https://braintumorclassification1.streamlit.app/",
-    description: "A tool using neural networks for accurate MRI scan classification of various tumors",
-    technologies: ["Python", "Computer Vision", "Gemini 2.0", "Neural Networks", "Transfer Learning", "Streamlit"],
+    description:
+      "Created an AI Chatbot Assistant designed to help users make sustainable life choices. The website is hosted on AWS EC2 Servers and deployed with Amazon Route 53",
+    technologies: ["Next.js", "AWS", "OpenAI", "LLMs"],
   },
 
   {
     id: 5,
-    title: "Customer Churn Prediction",
-    image: "/images/customer-churn.png",
-    github: "https://github.com/nk0311/customer_churn_ml",
-    demo: "https://ml-customer-churn-prediction.streamlit.app/",
-    description: "A machine learning-driven predictive tool designed to empower businesses in identifying customers at risk of churn ",
-    technologies: ["Python", "Numpy", "Sklearn", "Pandas", "Xception-Model", "Streamlit"],
+    title: "AI Rate my Professor",
+    image: "/images/ratemyprof.png",
+    github: "https://github.com/nk0311/AI_rate_my_prof",
+    demo: "https://talktomyprof.vercel.app/",
+    description:
+      "A RAG (Retrieval-Augmented Generation) app that delivers AI-driven recommendations for RateMyProfessor utilizes OpenAI embeddings ",
+    technologies: [
+      "Next.js",
+      "Typescript",
+      "Firebase",
+      "RAG",
+      "OpenAI",
+      "Vercel",
+    ],
+  },
+
+  {
+    id: 6,
+    title: "QuizzMe",
+    image: "/images/quizzme.png",
+    github: "https://github.com/amalikcraft/Flashcards-Saas",
+    demo: "https://quizzme.online/",
+    description:
+      "Developed a Next.js/React Flashcard app with Firebase, Clerk, and Stripe, featuring AI-powered flashcards via OpenAI integration, hosted on Vercel ",
+    technologies: [
+      "Next.js",
+      "Firebase",
+      "Clerk",
+      "Stripe",
+      "OpenAI",
+      "Vercel",
+    ],
   },
 ];
-
 
 export const skillsData = [
   {
@@ -296,7 +349,6 @@ export const skillsData = [
     percent: "35%",
   },
 ];
-
 
 export const blogs = [
   {
