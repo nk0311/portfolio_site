@@ -185,13 +185,52 @@ export const projectData = [
   {
     id: 1,
     title: "Customer Churn Prediction",
-    image: "/images/p1.png",
-    github: "https://github.com/yourusername/agency-opal-eight",
+    image: "/images/customer-churn.png",
+    github: "https://github.com/nk0311/customer_churn_ml",
     demo: "https://ml-customer-churn-prediction.streamlit.app/",
-    description: "ML application that predicts if a ",
-    technologies: ["OPAL", "Cedar", "Next.js"],
+    description: "A machine learning-driven predictive tool designed to empower businesses in identifying customers at risk of churn ",
+    technologies: ["Python", "Numpy", "Sklearn", "Pandas", "Xception-Model", "Streamlit"],
+  },
+
+  {
+    id: 2,
+    title: "Brain Tumor Classification",
+    image: "/images/brain-tumor-classification.png",
+    github: "https://github.com/nk0311/brain_tumor_classification",
+    demo: "https://braintumorclassification1.streamlit.app/",
+    description: "A tool using neural networks for accurate MRI scan classification of various tumors",
+    technologies: ["Python", "Computer Vision", "Gemini 2.0", "Neural Networks", "Transfer Learning", "Streamlit"],
   },
   
+  {
+    id: 3,
+    title: "Codebase RAG",
+    image: "/images/codebase-rag.png",
+    github: "https://github.com/nk0311/brain_tumor_classification",
+    demo: "https://github.com/nk0311/codebase_rag",
+    description: "An AI Expert over a codebase using Retrieval-Augumented Generation (RAG)",  
+    technologies: ["Python", "Grok", "Model Inference", "Github API", "Agents", "RAG"],
+  },
+
+  {
+    id: 4,
+    title: "Codebase RAG",
+    image: "/images/brain-tumor-classification.png",
+    github: "https://github.com/nk0311/brain_tumor_classification",
+    demo: "https://braintumorclassification1.streamlit.app/",
+    description: "A tool using neural networks for accurate MRI scan classification of various tumors",
+    technologies: ["Python", "Computer Vision", "Gemini 2.0", "Neural Networks", "Transfer Learning", "Streamlit"],
+  },
+
+  {
+    id: 5,
+    title: "Customer Churn Prediction",
+    image: "/images/customer-churn.png",
+    github: "https://github.com/nk0311/customer_churn_ml",
+    demo: "https://ml-customer-churn-prediction.streamlit.app/",
+    description: "A machine learning-driven predictive tool designed to empower businesses in identifying customers at risk of churn ",
+    technologies: ["Python", "Numpy", "Sklearn", "Pandas", "Xception-Model", "Streamlit"],
+  },
 ];
 
 
@@ -258,40 +297,6 @@ export const skillsData = [
   },
 ];
 
-export const clientReviews = [
-  {
-    name: "John Doe",
-    review:
-      "Exceptional service! The team delivered exactly what we needed on time. Very professional",
-    rating: 5,
-    profession: "Marketing Manager",
-    image: "/images/u1.jpg",
-  },
-  {
-    name: "Jane Smith",
-    review:
-      "Highly skilled developers who understand the client's vision and execute perfectly.",
-    rating: 4.8,
-    profession: "Business Owner",
-    image: "/images/u2.jpg",
-  },
-  {
-    name: "Michael Johnson",
-    review:
-      "Great communication and excellent results. Our new site performs beautifully.",
-    rating: 4.6,
-    profession: "Project Coordinator",
-    image: "/images/u3.jpg",
-  },
-  {
-    name: "Emily Brown",
-    review:
-      "Professional, efficient, and highly knowledgeable. Would definitely recommend their services!",
-    rating: 4.9,
-    profession: "Creative Director",
-    image: "/images/u4.jpg",
-  },
-];
 
 export const blogs = [
   {
