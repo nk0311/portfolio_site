@@ -72,18 +72,18 @@ export const experienceInfo = {
       iconPath: "/images/mixspot.png", // Path to the NASA logo
     },
   ],
-  education: [
-    {
-      degree: "Bachelor of Arts in Computer Science",
-      institution: "CUNY Hunter College",
-      location: "New York, NY",
-      date: "",
-      details: [
-        "Completed courses in Data Structures, Algorithms, Software Engineering, Deep Learning",
-      ],
-      iconPath: "/images/hunter.png",
-    },
-  ],
+  // education: [
+  //   {
+  //     degree: "Bachelor of Arts in Computer Science",
+  //     institution: "CUNY Hunter College",
+  //     location: "New York, NY",
+  //     date: "",
+  //     details: [
+  //       "Completed courses in Data Structures, Algorithms, Software Engineering, Deep Learning",
+  //     ],
+  //     iconPath: "/images/hunter.png",
+  //   },
+  // ],
 };
 
 export const projectData = [
@@ -191,6 +191,13 @@ export const projectData = [
 
 export const skillsData = {
   languages: [
+    { id: 8, title: "Python", image: "/images/python.svg" },
+    { id: 4, title: "TypeScript", image: "/images/ts.svg" },
+    { id: 3, title: "JavaScript", image: "/images/js.svg" },
+    { id: 5, title: "HTML", image: "/images/html.svg" },
+    { id: 2, title: "CSS", image: "/images/css.svg" },
+    { id: 11, title: "SQL", image: "/images/sql.png" },
+    { id: 10, title: "C++", image: "/images/cpp.svg" },
     { id: 8, title: "Python", image: "/images/python.svg" },
     { id: 4, title: "TypeScript", image: "/images/ts.svg" },
     { id: 3, title: "JavaScript", image: "/images/js.svg" },

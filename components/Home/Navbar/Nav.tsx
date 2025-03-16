@@ -65,7 +65,7 @@ const Nav = ({ openNav }: Props) => {
   ) as typeof navLinks;
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 flex justify-center items-center h-16 px-4 bg-black">
+    <div className="fixed top-0 left-0 right-0 z-50 flex justify-center items-center h-16 px-4 bg-black shadow-[0_4px_15px_0px_rgba(255,255,255,0.2)]">
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
           {/* Logo/Name */}
@@ -94,6 +94,19 @@ const Nav = ({ openNav }: Props) => {
                 </Link>
               );
             })}
+            
+            {/* Blog Button with bottom-to-top hover effect */}
+            <a 
+              href="https://substack.com/@navaitkumar" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="relative px-4 py-2 text-white border border-white rounded overflow-hidden group"
+            >
+              <span className="relative z-10 group-hover:text-black transition-colors duration-300">
+                Blog
+              </span>
+              <div className="absolute bottom-0 left-0 right-0 h-0 bg-white transition-all duration-300 ease-out group-hover:h-full"></div>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
