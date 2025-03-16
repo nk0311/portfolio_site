@@ -26,10 +26,9 @@ const Home = () => {
   return (
     <div className="overflow-hidden">
       <Hero />
+      <Project />
       <Skills />
       <Experience />
-      <Project />
-      
     </div>
   );
 };
