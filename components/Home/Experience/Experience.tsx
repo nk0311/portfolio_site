@@ -1,104 +1,8 @@
-// import React, { useState } from "react";
-// import { experienceInfo } from "@/Data/data";
-// import Image from 'next/image'; // Import Image from next/image
-
-// const Experience = () => {
-//   const [activeTab, setActiveTab] = useState(0); // State to track active experience
-
-//   return (
-//     <div className="pt-16 pb-16 bg-[#050709]">
-//       {/* Section Heading */}
-//       <h2 className="text-center text-4xl font-bold text-gray-200 mb-12">Where I've Worked</h2>
-
-//       {/* Navbar for Experiences */}
-//       <div className="flex justify-center space-x-6 mb-8">
-//         {experienceInfo.workExperience.map((work, index) => (
-//           <button
-//             key={index}
-//             onClick={() => setActiveTab(index)}
-//             className={`px-6 py-2 rounded-lg font-bold text-sm ${
-//               activeTab === index ? "bg-green-600 text-white" : "bg-gray-700 text-gray-300"
-//             } transition-all duration-300`}
-//           >
-//             {work.company}
-//           </button>
-//         ))}
-//       </div>
-
-//       {/* Experience Card */}
-//       <div className="w-[80%] mx-auto bg-gray-800 p-6 rounded-lg shadow-lg">
-//         <div className="flex items-start gap-4">
-//           {/* Icon */}
-//           <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-700">
-//             <Image
-//               src={experienceInfo.workExperience[activeTab].iconPath}
-//               alt="Company Logo"
-//               width={32} // Adjust width as needed
-//               height={32} // Adjust height as needed
-//             />
-//           </div>
-
-//           {/* Content */}
-//           <div className="w-full">
-//             <h3 className="text-xl font-bold text-gray-200">{experienceInfo.workExperience[activeTab].title}</h3>
-//             <p className="text-sm text-gray-400">
-//               {experienceInfo.workExperience[activeTab].company} | {experienceInfo.workExperience[activeTab].location}
-//             </p>
-//             <p className="text-sm text-gray-400">{experienceInfo.workExperience[activeTab].date}</p>
-//             <ul className="mt-3 list-disc pl-5 text-base text-gray-500">
-//               {experienceInfo.workExperience[activeTab].description.map((desc, index) => (
-//                 <li key={index}>{desc}</li>
-//               ))}
-//             </ul>
-//             <div className="flex flex-wrap gap-2 mt-4">
-//               {experienceInfo.workExperience[activeTab].skills.map((skill, index) => (
-//                 <span
-//                   key={index}
-//                   className="px-3 py-1 bg-gray-700 text-sm text-gray-300 rounded-full"
-//                 >
-//                   {skill}
-//                 </span>
-//               ))}
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* Education Section */}
-//       <h2 className="text-center text-4xl font-bold text-gray-200 mt-20 mb-12">Education</h2>
-//       <div className="w-[80%] mx-auto bg-gray-800 p-6 rounded-lg shadow-lg">
-//         {/* Icon */}
-//         <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-600 text-white mb-4">
-//           {experienceInfo.education[0].iconPath} {/* Assuming there's an icon for education */}
-//         </div>
-
-//         {/* Content */}
-//         {experienceInfo.education.map((edu, index) => (
-//           <div key={index}>
-//             <h3 className="text-xl font-bold text-gray-200">{edu.degree}</h3>
-//             <p className="text-sm text-gray-400">{edu.institution} | {edu.location}</p>
-//             <p className="text-sm text-gray-400">{edu.date}</p>
-//             <ul className="mt-3 list-disc pl-5 text-base text-gray-500">
-//               {edu.details.map((detail, index) => (
-//                 <li key={index}>{detail}</li>
-//               ))}
-//             </ul>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Experience;
-
-import React, { useState } from "react";
+import React from "react";
 import { experienceInfo } from "@/Data/data";
 import Image from "next/image";
 
 const Experience = () => {
-  const [activeTab, setActiveTab] = useState(0); // State to track active experience
-
   return (
     <div className="pt-16 pb-16 bg-[#050709]">
       {/* Section Heading */}
@@ -106,94 +10,108 @@ const Experience = () => {
         Work Experience
       </h2>
 
-      {/* Navbar for Experiences */}
-      <div className="flex justify-center space-x-6 mb-8">
+      {/* Experience Display - Vertical Layout */}
+      <div className="w-[80%] mx-auto">
         {experienceInfo.workExperience.map((work, index) => (
-          <button
-            key={index}
-            onClick={() => setActiveTab(index)}
-            className={`px-6 py-2 rounded-lg font-bold text-sm ${
-              activeTab === index
-                ? "bg-green-600 text-white"
-                : "bg-gray-700 text-gray-300"
-            } transition-all duration-300`}
-          >
-            {work.company}
-          </button>
-        ))}
-      </div>
+          <div key={index} className="flex items-start mb-20">
+            {/* Date Section */}
+            <div className="w-[30%] text-gray-400 font-medium text-xl">
+              {work.date}
+            </div>
 
-      {/* Experience Card */}
-      <div className="w-[80%] mx-auto bg-gray-800 p-6 rounded-lg shadow-lg">
-        <div className="flex items-start gap-4">
-          {/* Icon */}
-          <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-700">
-            <Image
-              src={experienceInfo.workExperience[activeTab].iconPath}
-              alt="Company Logo"
-              width={32} // Adjust width as needed
-              height={32} // Adjust height as needed
-            />
-          </div>
+            {/* Content Section */}
+            <div className="w-[70%]">
+              <div className="flex flex-col mb-6">
+                {/* Title and Company */}
+                <h3 className="text-4xl font-bold text-white mb-1">
+                  {work.title}
+                </h3>
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center overflow-hidden">
+                    <Image
+                      src={work.iconPath}
+                      alt="Company Logo"
+                      width={24}
+                      height={24}
+                    />
+                  </div>
+                  <p className="text-xl text-gray-300">{work.company}</p>
+                </div>
+              </div>
 
-          {/* Content */}
-          <div className="w-full">
-            <h3 className="text-xl font-bold text-gray-200">
-              {experienceInfo.workExperience[activeTab].title}
-            </h3>
-            <p className="text-sm text-gray-400">
-              {`Company: ${experienceInfo.workExperience[activeTab].company} | ${experienceInfo.workExperience[activeTab].location}`}
-            </p>
-            <p className="text-sm text-gray-400">
-              {experienceInfo.workExperience[activeTab].date}
-            </p>
-            <ul className="mt-3 list-disc pl-5 text-base text-gray-500">
-              {experienceInfo.workExperience[activeTab].description.map(
-                (desc, index) => (
-                  <li key={index}>{desc}</li>
-                )
-              )}
-            </ul>
-            <div className="flex flex-wrap gap-2 mt-4">
-              {experienceInfo.workExperience[activeTab].skills.map(
-                (skill, index) => (
+              {/* Experience Bullet Points */}
+              <div className="space-y-6 mb-8">
+                {work.description.map((desc, idx) => (
+                  <div key={idx} className="flex items-start">
+                    <span className="text-[#0096FF] text-2xl mr-3">»</span>
+                    <p className="text-lg text-gray-300">{desc}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Skills - Updated to match the dark bluish-gray style */}
+              <div className="flex flex-wrap gap-3 mt-6">
+                {work.skills.map((skill, idx) => (
                   <span
-                    key={index}
-                    className="px-3 py-1 bg-gray-700 text-sm text-gray-300 rounded-full"
+                    key={idx}
+                    className="px-5 py-2 bg-[#2A3441] text-gray-200 rounded-full text-base"
                   >
                     {skill}
                   </span>
-                )
-              )}
+                ))}
+              </div>
             </div>
           </div>
-        </div>
+        ))}
       </div>
 
       {/* Education Section */}
       <h2 className="text-center text-4xl font-bold text-gray-200 mt-20 mb-12">
         Education
       </h2>
-      <div className="w-[80%] mx-auto bg-gray-800 p-6 rounded-lg shadow-lg">
-        {/* Icon */}
-        <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-600 text-white mb-4">
-          {experienceInfo.education[0].iconPath}{" "}
-          {/* Assuming there's an icon for education */}
-        </div>
-
-        {/* Content */}
+      <div className="w-[80%] mx-auto">
         {experienceInfo.education.map((edu, index) => (
-          <div key={index}>
-            <h3 className="text-xl font-bold text-gray-200">{edu.degree}</h3>
-            <p className="text-sm text-gray-400">
-              {edu.institution} | {edu.location}
-            </p>
-            <p className="text-sm text-gray-400">{edu.date}</p>
-            <ul className="mt-3 list-disc pl-5 text-base text-gray-500">
-              {edu.details.map((detail, index) => (
-                <li key={index}>{detail}</li>
-              ))}
-            </ul>
+          <div key={index} className="flex items-start mb-10">
+            <div className="w-[30%] text-gray-400 font-medium text-xl">
+              {edu.date}
+            </div>
+            <div className="w-[70%]">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-8 h-8 rounded-full bg-[#0096FF] flex items-center justify-center">
+                  {edu.iconPath ? (
+                    <Image
+                      src={edu.iconPath}
+                      alt="Institution Logo"
+                      width={24}
+                      height={24}
+                    />
+                  ) : (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5 text-white"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                      <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                    </svg>
+                  )}
+                </div>
+                <h3 className="text-2xl font-bold text-white">{edu.degree}</h3>
+              </div>
+              <p className="text-lg text-gray-300 mb-3">
+                {edu.institution} | {edu.location}
+              </p>
+              <div className="space-y-4">
+                {edu.details.map((detail, idx) => (
+                  <div key={idx} className="flex items-start">
+                    <span className="text-[#0096FF] text-2xl mr-3">»</span>
+                    <span className="text-lg text-gray-300">{detail}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         ))}
       </div>

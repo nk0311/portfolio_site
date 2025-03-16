@@ -5,9 +5,12 @@ import { skillsData } from "@/Data/data";
 
 const Skills: React.FC = () => {
   return (
+    
     <section className="py-10" style={{ backgroundColor:'black'}}>
+      
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-8">My Skills</h2>
+        
+        <h1 className="text-4xl font-bold text-center mb-8 text-white">My Skills</h1>
         
         <div className={styles.marqueeContainer}>
           {/* Languages row - scrolling left */}
