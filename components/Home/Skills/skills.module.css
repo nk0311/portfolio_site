@@ -1,0 +1,60 @@
+/* Container for both marquees */
+.marqueeContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Space between rows */
+    background-color: black; /* Add black background */
+    padding: 30px 0; /* Add some padding for better spacing */
+  }
+  
+  /* Marquee styling */
+  .marquee {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    background-color: black; /* Ensure each marquee row has black background */
+  }
+  
+  /* Content inside the marquee */
+  .marqueeContent {
+    display: inline-flex;
+    padding: 15px 0;
+  }
+  
+  /* Animation for scrolling left */
+  .scrollLeft .marqueeContent {
+    animation: scrollLeft 40s linear infinite;
+  }
+  
+  @keyframes scrollLeft {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  /* Animation for scrolling right */
+  .scrollRight .marqueeContent {
+    animation: scrollRight 40s linear infinite;
+  }
+  
+  @keyframes scrollRight {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  /* Skill card styling */
+  .skillCard {
+    display: inline-block;
+    margin: 0 20px;
+    min-width: 120px;
+    text-align: center;
+  }
+  

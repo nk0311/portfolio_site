@@ -141,49 +141,6 @@ export const servicesData = [
   },
 ];
 
-// export const projectData = [
-//   {
-//     id: 1,
-//     image: "/images/p1.png",
-//     url: "https://agency-opal-eight.vercel.app/",
-//   },
-//   {
-//     id: 2,
-//     image: "/images/p2.png",
-//     url: "https://burger-pearl.vercel.app/",
-//   },
-//   {
-//     id: 3,
-//     image: "/images/p3.png",
-//     url: "https://game-ecommerce-yt.vercel.app/",
-//   },
-//   {
-//     id: 4,
-//     image: "/images/p4.png",
-//     url: "https://elearning-yt.vercel.app/",
-//   },
-//   {
-//     id: 5,
-//     image: "/images/p5.png",
-//     url: "https://invest-peach.vercel.app/",
-//   },
-//   {
-//     id: 6,
-//     image: "/images/p6.png",
-//     url: "https://job-chi-ruby.vercel.app/",
-//   },
-//   {
-//     id: 7,
-//     image: "/images/p7.png",
-//     url: "https://wdw-ecom.vercel.app/",
-//   },
-//   {
-//     id: 8,
-//     image: "/images/p8.png",
-//     url: "https://webhost-ten.vercel.app/",
-//   },
-// ];
-
 export const projectData = [
   {
     id: 1,
@@ -287,68 +244,118 @@ export const projectData = [
   },
 ];
 
-export const skillsData = [
-  {
-    id: 1,
-    title: "React",
-    image: "/images/react.svg",
-    percent: "90%",
-  },
-  {
-    id: 2,
-    title: "CSS",
-    image: "/images/css.svg",
-    percent: "97%",
-  },
-  {
-    id: 3,
-    title: "JavaScript",
-    image: "/images/js.svg",
-    percent: "77%",
-  },
-  {
-    id: 4,
-    title: "TypeScript",
-    image: "/images/ts.svg",
-    percent: "67%",
-  },
-  {
-    id: 5,
-    title: "HTML",
-    image: "/images/html.svg",
-    percent: "67%",
-  },
-  {
-    id: 6,
-    title: "Node JS",
-    image: "/images/node.svg",
-    percent: "77%",
-  },
-  {
-    id: 7,
-    title: "MongoDB",
-    image: "/images/mongo.svg",
-    percent: "65%",
-  },
-  {
-    id: 8,
-    title: "Python",
-    image: "/images/python.svg",
-    percent: "55%",
-  },
-  {
-    id: 9,
-    title: "Firebase",
-    image: "/images/firebase.svg",
-    percent: "75%",
-  },
-  {
-    id: 10,
-    title: "Vue",
-    image: "/images/vue.svg",
-    percent: "35%",
-  },
-];
+// export const skillsData = [
+//   {
+//     id: 1,
+//     title: "Python",
+//     image: "/images/python.svg",
+    
+//   },
+//   {
+//     id: 2,
+//     title: "CSS",
+//     image: "/images/css.svg",
+    
+//   },
+//   {
+//     id: 3,
+//     title: "JavaScript",
+//     image: "/images/js.svg",
+//     percent: "77%",
+//   },
+//   {
+//     id: 4,
+//     title: "TypeScript",
+//     image: "/images/ts.svg",
+
+//   },
+//   {
+//     id: 5,
+//     title: "HTML",
+//     image: "/images/html.svg",
+   
+//   },
+//   {
+//     id: 6,
+//     title: "Node JS",
+//     image: "/images/node.svg",
+
+//   },
+//   {
+//     id: 7,
+//     title: "MongoDB",
+//     image: "/images/mongo.svg",
+//   },
+//   {
+//     id: 8,
+//     title: "Python",
+//     image: "/images/python.svg",
+//   },
+//   {
+//     id: 9,
+//     title: "Firebase",
+//     image: "/images/firebase.svg",
+//   },
+//   {
+//     id: 10,
+//     title: "Vue",
+//     image: "/images/vue.svg",
+//   },
+// ];
+
+// data.ts
+// export const skillsData = {
+//   languages: [
+//     { id: 8, title: "Python", image: "/images/python.svg" },
+//     { id: 4, title: "TypeScript", image: "/images/ts.svg" },
+//     { id: 3, title: "JavaScript", image: "/images/js.svg" },
+//     { id: 5, title: "HTML", image: "/images/html.svg" },
+//     { id: 2, title: "CSS", image: "/images/css.svg" },
+//     { id: 11, title: "SQL", image: "/images/sql.png" },
+//     { id: 10, title: "C++", image: "/images/cpp.svg" },
+//   ],
+//   skills: [
+//     { id: 1, title: "React", image: "/images/react.svg" },
+//     { id: 6, title: "Node JS", image: "/images/node.svg" },
+//     { id: 7, title: "MongoDB", image: "/images/mongo.svg" },
+//     { id: 9, title: "Firebase", image: "/images/firebase.svg" },
+//   ],
+// };
+
+export const skillsData = {
+  languages: [
+    { id: 8, title: "Python", image: "/images/python.svg" },
+    { id: 4, title: "TypeScript", image: "/images/ts.svg" },
+    { id: 3, title: "JavaScript", image: "/images/js.svg" },
+    { id: 5, title: "HTML", image: "/images/html.svg" },
+    { id: 2, title: "CSS", image: "/images/css.svg" },
+    { id: 11, title: "SQL", image: "/images/sql.png" },
+    { id: 10, title: "C++", image: "/images/cpp.svg" },
+  ],
+  skills: [
+    { id: 1, title: "React", image: "/images/react.svg" },
+    { id: 6, title: "Node JS", image: "/images/node.svg" },
+    { id: 7, title: "Redis", image: "/images/redis.svg" },
+    { id: 9, title: "Firebase", image: "/images/firebase.svg" },
+    { id: 12, title: "Langchain", image: "/images/langchain.png" },
+    { id: 13, title: "PostgreSQL", image: "/images/postgresql.png" },
+    { id: 14, title: "Linux", image: "/images/linux.png" },
+    { id: 15, title: "Vercel", image: "/images/vercel.png" },
+    { id: 16, title: "Streamlit", image: "/images/streamlit.png" },
+    { id: 17, title: "FastAPI", image: "/images/fastapi.svg" },
+    { id: 18, title: "Django", image: "/images/django.png" },
+    { id: 19, title: "Next.js", image: "/images/nextjs.svg" },
+    { id: 20, title: "AWS", image: "/images/aws.svg" },
+    { id: 21, title: "Git", image: "/images/git.svg" },
+    { id: 22, title: "Material-UI", image: "/images/mui.svg" },
+    { id: 23, title: "Postman", image: "/images/postman.svg" },
+  ],
+};
+
+
+
+
+
 
 export const blogs = [
   {
