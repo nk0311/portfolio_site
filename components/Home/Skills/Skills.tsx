@@ -5,14 +5,11 @@ import { skillsData } from "@/Data/data";
 
 const Skills: React.FC = () => {
   return (
-    <section id="skills" className="py-10 overflow-hidden" style={{ backgroundColor: "black" }}>
-      <div className="container mx-auto px-4 mb-8">
-        <h2 className="text-5xl font-bold text-white mb-2">
-          <span className="text-blue-gradient">My Skills</span>
-        </h2>
-        <p className="text-gray-400 mb-12">Technologies I've been working with</p>
-      </div>
-      
+    <section
+      id="skills"
+      className="py-10 overflow-hidden"
+      style={{ backgroundColor: "black" }}
+    >
       {/* Full width marquee container - outside of normal container */}
       <div className={styles.marqueeContainer}>
         {/* Languages row - scrolling left */}
