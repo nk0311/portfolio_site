@@ -70,7 +70,7 @@ const Skills: React.FC = () => {
         <h2 className="text-5xl font-bold text-white mb-2">
           <span className="text-blue-gradient">Skills</span>
         </h2>
-        <p className="text-gray-400 mb-12">Technologies I've been working with</p>
+        <p className="text-gray-400 mb-12">Technologies that I have been working with</p>
         
         <div className={styles.marqueeContainer}>
           {/* Languages row - scrolling left */}
