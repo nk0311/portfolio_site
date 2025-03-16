@@ -1,60 +1,65 @@
 /* Container for both marquees */
 .marqueeContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 40px; /* Space between rows */
-    background-color: black; /* Add black background */
-    padding: 30px 0; /* Add some padding for better spacing */
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* Space between rows */
+  background-color: black;
+  padding: 30px 0;
+  width: 100vw; /* Use viewport width instead of container width */
+  margin-left: calc(-50vw + 50%); /* Trick to make it full width regardless of parent container */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Marquee styling */
+.marquee {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  background-color: black;
+}
+
+/* Content inside the marquee */
+.marqueeContent {
+  display: inline-flex;
+  padding: 15px 0;
+  will-change: transform; /* Performance optimization */
+  min-width: 200%; /* Ensure content is wide enough */
+}
+
+/* Animation for scrolling left */
+.scrollLeft .marqueeContent {
+  animation: scrollLeft 30s linear infinite;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
   }
-  
-  /* Marquee styling */
-  .marquee {
-    position: relative;
-    overflow: hidden;
-    white-space: nowrap;
-    width: 100%;
-    background-color: black; /* Ensure each marquee row has black background */
+  100% {
+    transform: translateX(-50%);
   }
-  
-  /* Content inside the marquee */
-  .marqueeContent {
-    display: inline-flex;
-    padding: 15px 0;
+}
+
+/* Animation for scrolling right */
+.scrollRight .marqueeContent {
+  animation: scrollRight 30s linear infinite;
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
   }
-  
-  /* Animation for scrolling left */
-  .scrollLeft .marqueeContent {
-    animation: scrollLeft 40s linear infinite;
+  100% {
+    transform: translateX(0);
   }
-  
-  @keyframes scrollLeft {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-  
-  /* Animation for scrolling right */
-  .scrollRight .marqueeContent {
-    animation: scrollRight 40s linear infinite;
-  }
-  
-  @keyframes scrollRight {
-    0% {
-      transform: translateX(-50%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-  
-  /* Skill card styling */
-  .skillCard {
-    display: inline-block;
-    margin: 0 20px;
-    min-width: 120px;
-    text-align: center;
-  }
-  
+}
+
+/* Skill card styling */
+.skillCard {
+  display: inline-block;
+  margin: 0 20px;
+  min-width: 120px;
+  text-align: center;
+}

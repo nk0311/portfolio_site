@@ -1,41 +1,36 @@
-import { navLinks } from "@/constant/constant";
+"use client";
 import Link from "next/link";
 import React from "react";
-import { CgClose } from "react-icons/cg";
+import { IoMdClose } from "react-icons/io";
 
-// Props type
 type Props = {
   showNav: boolean;
   closeNav: () => void;
 };
 
-const MobileNav = ({ closeNav, showNav }: Props) => {
-  const navOpen = showNav ? "translate-x-0" : "translate-x-[-100%]";
-
+const MobileNav = ({ showNav, closeNav }: Props) => {
   return (
-    <div>
-      {/* Overlay */}
-      <div
-        className={`fixed ${navOpen} transform transition-all duration-500 inset-0 z-[1000] bg-black opacity-70 w-full h-screen`}
-      ></div>
-      {/* Nav links */}
-      <div
-        className={`text-white ${navOpen} transform transition-all duration-500 delay-300 fixed justify-center flex flex-col h-full w-[80%] sm:w-[60%] bg-[#0f0715] space-y-6 z-[10000]`}
-      >
-        {navLinks.map((navlink) => {
-          return (
-            <Link key={navlink.id} href={navlink.url}>
-              <p className="nav__link text-[20px] ml-12 border-b-[1.5px] pb-2 border-white sm:text-[30px]">
-                {navlink.label}
-              </p>
-            </Link>
-          );
-        })}
-        {/* Close button */}
-        <CgClose
-          onClick={closeNav}
-          className="absolute top-[0.7rem] right-[1.4rem] sm:w-8 sm:h-8 w-6 h-6 text-white"
+    <div 
+      className={`fixed top-0 right-0 bottom-0 w-[70%] bg-black z-50 transition-transform duration-300 ${
+        showNav ? 'translate-x-0' : 'translate-x-full'
+      }`}
+    >
+      <div className="flex justify-end p-4">
+        <IoMdClose 
+          className="text-white w-8 h-8 cursor-pointer" 
+          onClick={closeNav} 
         />
+      </div>
+      <div className="flex flex-col items-center space-y-8 mt-16">
+        <Link href="/#home" onClick={closeNav}>
+          <p className="text-white text-xl">Home</p>
+        </Link>
+        <Link href="/#experience" onClick={closeNav}>
+          <p className="text-white text-xl">Experience</p>
+        </Link>
+        <Link href="/#projects" onClick={closeNav}>
+          <p className="text-white text-xl">Projects</p>
+        </Link>
       </div>
     </div>
   );

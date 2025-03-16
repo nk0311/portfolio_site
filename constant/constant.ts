@@ -1,7 +1,7 @@
 export const navLinks = [
   {
     id: 1,
-    url: "#",
+    url: "#home",
     label: "Home",
   },
   {
@@ -10,11 +10,6 @@ export const navLinks = [
     label: "Experience",
   },
 
-  {
-    id: 3,
-    url: "#",
-    label: "Reviews",
-  },
 
   {
     id: 3,
@@ -22,9 +17,5 @@ export const navLinks = [
     label: "Projects",
   },
  
-  {
-    id: 6,
-    url: "#",
-    label: "Contacts",
-  },
+  
 ];

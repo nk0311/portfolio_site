@@ -77,7 +77,7 @@ export const experienceInfo = {
       degree: "Bachelor of Arts in Computer Science",
       institution: "CUNY Hunter College",
       location: "New York, NY",
-      date: "Jun 2023",
+      date: "",
       details: [
         "Completed courses in Data Structures, Algorithms, Software Engineering, Deep Learning",
       ],

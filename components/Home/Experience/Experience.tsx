@@ -49,7 +49,7 @@ const Experience = () => {
   };
 
   return (
-    <div className="pt-16 pb-16 bg-[#050709]">
+    <div id="experience" className="pt-16 pb-16 bg-[#050709]">
       <div className="container mx-auto px-4">
         {/* Work Experience Section Heading */}
         <motion.div 
