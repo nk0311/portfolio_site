@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="en" className="custom-scrollbar">
       <body className={font.className}>
         <div className="hidden md:block">
-          <AnimatedCursor
+          {/* <AnimatedCursor
             innerSize={8}
             outerSize={35}
             innerScale={2}
@@ -37,7 +37,7 @@ export default function RootLayout({
             outerStyle={{
               border: "3px solid white",
             }}
-          />
+          /> */}
         </div>
         <ResponsiveNav />
         {children}
