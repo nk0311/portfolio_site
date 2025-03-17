@@ -17,11 +17,8 @@ interface ProjectType {
 }
 
 const Project = () => {
-  const [selectedProject, setSelectedProject] = useState<ProjectType | null>(
-    null
-  );
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [hoveredIndex, setHoveredIndex] = useState(0);
+  const [selectedProject, setSelectedProject] = useState<ProjectType | null>(null);
+  const [hoveredIndex, setHoveredIndex] = useState(-1);
   const [initialLoadComplete, setInitialLoadComplete] = useState(false);
 
   // Initialize animation state on first render only
@@ -44,33 +41,16 @@ const Project = () => {
     document.body.style.overflow = "auto";
   };
 
-  const navigateProjects = (direction: "next" | "prev") => {
-    const increment = direction === "next" ? 1 : -1;
-    setCurrentIndex((prevIndex) => {
-      const newIndex = (prevIndex + increment) % projectData.length;
-      return newIndex < 0 ? projectData.length - Math.abs(newIndex) : newIndex;
-    });
-    setHoveredIndex(currentIndex);
-  };
-
-  // Get the three visible projects
-  const visibleProjects = () => {
-    const projects = [];
-    for (let i = 0; i < 3; i++) {
-      const index = (currentIndex + i) % projectData.length;
-      projects.push({ ...projectData[index], index });
-    }
-    return projects;
-  };
-
-  const projects = visibleProjects();
+  // Group projects into rows of three
+  const projectRows = [];
+  for (let i = 0; i < projectData.length; i += 3) {
+    projectRows.push(projectData.slice(i, i + 3));
+  }
 
   return (
     <div id="projects" className="pt-16 pb-24 bg-[#050709]">
       <div className="container mx-auto px-4">
-        <div
-          className={`header-animation ${initialLoadComplete ? "active" : ""}`}
-        >
+        <div className={`header-animation ${initialLoadComplete ? "active" : ""}`}>
           <h2 className="text-5xl font-bold text-white mb-2">
             <span className="text-blue-gradient">Featured Projects</span>
           </h2>
@@ -80,99 +60,60 @@ const Project = () => {
         </div>
 
         <div className="featured-projects-container">
-          <div className="featured-projects-row">
-            {projects.map((project, idx) => (
-              <div
-                key={project.id}
-                className={`project-card ${
-                  hoveredIndex === project.index ? "expanded" : ""
-                } ${initialLoadComplete ? "load-complete" : ""}`}
-                style={{ animationDelay: `${idx * 400}ms` }}
-                onClick={() => openProjectDetails(project)}
-                onMouseEnter={() => setHoveredIndex(project.index)}
-              >
-                <div className="relative rounded-lg overflow-hidden shadow-xl h-full w-full">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
+          {projectRows.map((row, rowIndex) => (
+            <div key={`row-${rowIndex}`} className="featured-projects-row">
+              {row.map((project, idx) => (
+                <div
+                  key={project.id}
+                  className={`project-card ${
+                    hoveredIndex === project.id ? "expanded" : ""
+                  } ${initialLoadComplete ? "load-complete" : ""}`}
+                  style={{ animationDelay: `${(rowIndex * 3 + idx) * 200}ms` }}
+                  onClick={() => openProjectDetails(project)}
+                  onMouseEnter={() => setHoveredIndex(project.id)}
+                  onMouseLeave={() => setHoveredIndex(-1)}
+                >
+                  <div className="relative rounded-lg overflow-hidden shadow-xl h-full w-full">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
 
-                  <div className="absolute bottom-0 left-0 w-full px-6 pb-8">
-                    <h3 className="project-title text-2xl font-bold text-white">
-                      {project.title}
-                    </h3>
-                  </div>
-
-                  {hoveredIndex === project.index && (
-                    <div className="absolute bottom-4 right-6">
-                      <div className="visit-btn flex items-center justify-center text-white">
-                        Visit Project
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-5 w-5 ml-1"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9 5l7 7-7 7"
-                          />
-                        </svg>
-                      </div>
+                    <div className="absolute bottom-0 left-0 w-full px-6 pb-8">
+                      <h3 className="project-title text-2xl font-bold text-white">
+                        {project.title}
+                      </h3>
                     </div>
-                  )}
+
+                    {hoveredIndex === project.id && (
+                      <div className="absolute bottom-4 right-6">
+                        <div className="visit-btn flex items-center justify-center text-white">
+                          Visit Project
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-5 w-5 ml-1"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M9 5l7 7-7 7"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-
-          <button
-            className="nav-btn prev-btn"
-            onClick={() => navigateProjects("prev")}
-            aria-label="Previous projects"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-8 w-8"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
-
-          <button
-            className="nav-btn next-btn"
-            onClick={() => navigateProjects("next")}
-            aria-label="Next projects"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-8 w-8"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
 
@@ -324,17 +265,21 @@ const Project = () => {
         .featured-projects-container {
           position: relative;
           width: 100%;
-          height: 500px;
           margin: 30px auto 0;
           overflow: visible;
-          padding: 0 60px;
+          padding: 0 20px;
         }
 
         .featured-projects-row {
           display: flex;
           width: 100%;
-          height: 100%;
+          height: 400px;
           gap: 20px;
+          margin-bottom: 30px;
+        }
+
+        .featured-projects-row:last-child {
+          margin-bottom: 0;
         }
 
         /* Project card base styles */
@@ -348,7 +293,7 @@ const Project = () => {
           transition: flex 0.7s cubic-bezier(0.23, 1, 0.32, 1);
           height: 100%;
 
-          /* Initial load animation state - only applies before load-complete is added */
+          /* Initial load animation state */
           opacity: 0;
           transform: translateY(80px);
           filter: blur(5px);
@@ -372,7 +317,7 @@ const Project = () => {
           }
         }
 
-        /* Expanded/hover state - this happens when hovering at any time */
+        /* Expanded/hover state */
         .project-card.expanded {
           flex: 2.5;
         }
@@ -408,38 +353,6 @@ const Project = () => {
           opacity: 1;
         }
 
-        /* Navigation buttons */
-        .nav-btn {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          width: 60px;
-          height: 60px;
-          border-radius: 50%;
-          background: rgba(59, 130, 246, 0.3);
-          color: white;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          z-index: 20;
-          transition: background 0.3s ease;
-          border: none;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .nav-btn:hover {
-          background: rgba(59, 130, 246, 0.7);
-        }
-
-        .prev-btn {
-          left: -5px;
-        }
-
-        .next-btn {
-          right: -5px;
-        }
-
         /* Modal animation */
         .modal-animation {
           animation: modalFadeIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
@@ -458,27 +371,21 @@ const Project = () => {
 
         /* Responsive styles */
         @media (max-width: 1024px) {
-          .featured-projects-container {
+          .featured-projects-row {
             height: 450px;
-            padding: 0 50px;
-          }
-
-          .nav-btn {
-            width: 50px;
-            height: 50px;
           }
         }
 
         @media (max-width: 768px) {
           .featured-projects-container {
             height: auto;
-            padding: 0 40px;
           }
 
           .featured-projects-row {
             flex-direction: column;
             gap: 20px;
             height: auto;
+            margin-bottom: 20px;
           }
 
           .project-card {
@@ -489,21 +396,6 @@ const Project = () => {
           .project-card.expanded,
           .project-card:not(.expanded) {
             flex: 1;
-          }
-
-          .nav-btn {
-            top: auto;
-            bottom: -70px;
-            width: 45px;
-            height: 45px;
-          }
-
-          .prev-btn {
-            left: calc(50% - 55px);
-          }
-
-          .next-btn {
-            right: calc(50% - 55px);
           }
         }
       `}</style>
