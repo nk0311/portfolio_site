@@ -127,8 +127,8 @@ export const projectData = [
     id: 3,
     title: "Codebase RAG",
     image: "/images/codebase-rag.png",
-    github: "https://codebase-rag-chatbot.streamlit.app/",
-    demo: "https://github.com/nk0311/codebase_rag",
+    github: "https://github.com/nk0311/codebase_rag",
+    demo: "https://codebase-rag-chatbot.streamlit.app/",
     description:
       "An AI Expert over a codebase using Retrieval-Augumented Generation (RAG)",
     technologies: [
