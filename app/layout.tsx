@@ -6,6 +6,10 @@ import Footer from "@/components/Home/Footer/Footer";
 import ScrollToTop from "@/components/Helper/ScrollToTop";
 import AnimatedCursor from "react-animated-cursor";
 
+import { GoogleAnalytics } from '@next/third-parties/google'
+ 
+
+
 const font = Sora({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
   subsets: ["latin"],
@@ -24,26 +28,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="custom-scrollbar">
       <body className={font.className}>
-        <div className="hidden md:block">
-          {/* <AnimatedCursor
-            innerSize={8}
-            outerSize={35}
-            innerScale={2}
-            outerScale={2}
-            outerAlpha={0}
-            innerStyle={{
-              backgroundColor: "white",
-            }}
-            outerStyle={{
-              border: "3px solid white",
-            }}
-          /> */}
-        </div>
+       
         <ResponsiveNav />
         {children}
         <Footer />
         <ScrollToTop />
       </body>
+      <GoogleAnalytics gaId="G-PESMQW0XT3" />
     </html>
   );
 }
