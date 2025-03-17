@@ -127,7 +127,7 @@ export const projectData = [
     id: 3,
     title: "Codebase RAG",
     image: "/images/codebase-rag.png",
-    github: "https://github.com/nk0311/brain_tumor_classification",
+    github: "https://codebase-rag-chatbot.streamlit.app/",
     demo: "https://github.com/nk0311/codebase_rag",
     description:
       "An AI Expert over a codebase using Retrieval-Augumented Generation (RAG)",
@@ -146,7 +146,7 @@ export const projectData = [
     title: "Sutainable AI",
     image: "/images/sustainable.png",
     github: "https://github.com/MoHoThrives/sustAInable",
-    demo: "https://braintumorclassification1.streamlit.app/",
+    demo: "https://chatbot.sustainableaimessaging.chat/",
     description:
       "Created an AI Chatbot Assistant designed to help users make sustainable life choices. The website is hosted on AWS EC2 Servers and deployed with Amazon Route 53",
     technologies: ["Next.js", "AWS", "OpenAI", "LLMs"],
